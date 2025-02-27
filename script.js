@@ -38,16 +38,11 @@ function criarRosa() {
     const rosa = document.createElement("div");
     rosa.classList.add("rose");
 
-    rosa.style.left = Math.random() * 100 + "vw"; // Posição aleatória na tela
-    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s"; // Tempo de queda aleatório
+    rosa.style.left = Math.random() * 100 + "vw";
+    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s";
 
-    // Ajustando para começar a cair abaixo do carrossel
-    const containerAltura = document.querySelector(".container").offsetHeight;
-    rosa.style.top = `${containerAltura + 20}px`; // Começa um pouco abaixo do container
+    document.body.appendChild(rosa);
 
-    document.body.appendChild(rosa); // Adiciona a rosa ao body
-
-    // Remove a rosa após cair
     setTimeout(() => {
         rosa.remove();
     }, 7000);
