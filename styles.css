@@ -1,0 +1,146 @@
+/* Impede rolagem lateral e mantém tudo centralizado */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #121212;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Nome do casal */
+.nome-casal {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    white-space: nowrap;
+}
+
+/* Container principal */
+.container {
+    max-width: 90%;
+    width: 320px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #1e1e1e;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Centraliza imagens e tempo juntos */
+.conteudo-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo do timer */
+.tempo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Ajuste no carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Estilo das imagens do carrossel */
+.imagem-casal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.imagem-casal.active {
+    opacity: 1;
+}
+
+/* Linha branca separando a mensagem */
+.linha-branca {
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    margin: 20px auto;
+    border: none;
+}
+
+/* Mensagem abaixo do container */
+.mensagem {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* Animação do coração */
+.heart {
+    display: inline-block;
+    animation: beat 1s infinite alternate;
+}
+
+/* Efeito de rosas caindo */
+.rose {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('rosa.png'); /* Certifique-se que a imagem existe */
+    background-size: cover;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Animação da queda */
+@keyframes fall {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Animação do coração */
+@keyframes beat {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Melhorando Responsividade */
+@media (max-width: 400px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .tempo {
+        font-size: 16px;
+    }
+
+    .nome-casal {
+        font-size: 18px;
+    }
+}
