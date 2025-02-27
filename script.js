@@ -12,7 +12,8 @@ function updateTimer() {
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     document.getElementById("timer").innerHTML = 
-        `${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        `${years} anos, ${days} dias <br> 
+        ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
 }
 
 // Atualiza o contador a cada segundo
@@ -38,18 +39,14 @@ function criarRosa() {
     rosa.classList.add("rose");
 
     rosa.style.left = Math.random() * 100 + "vw";
-    rosa.style.animationDuration = (Math.random() * 3 + 2) + "s";
-
-    const containerAltura = document.querySelector(".container").offsetHeight;
-    rosa.style.top = `${containerAltura + 20}px`; 
+    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s";
 
     document.body.appendChild(rosa);
 
-    // Remove a rosa após cair
     setTimeout(() => {
         rosa.remove();
-    }, 5000);
+    }, 7000);
 }
 
-// Criar rosas continuamente a cada 400ms
-setInterval(criarRosa, 400);
+// Criar rosas continuamente a cada 500ms
+setInterval(criarRosa, 500);

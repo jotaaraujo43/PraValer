@@ -1,28 +1,36 @@
-/* Resetando margens e impedindo rolagem lateral */
+/* Remove rolagem lateral */
 html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     background-color: #121212;
     color: white;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Nome do casal */
+/* Nome do casal com efeito suave */
 .nome-casal {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Efeito de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Container principal */
 .container {
-    max-width: 360px;
+    max-width: 320px;
     width: 90%;
     padding: 20px;
     border-radius: 15px;
@@ -30,21 +38,22 @@ html, body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Centraliza imagens e tempo */
+/* Centraliza imagens e tempo juntos */
 .conteudo-central {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-/* Timer estilizado */
+/* Estilo do timer */
 .tempo {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-/* Estilo do carrossel */
+/* Ajuste no carrossel */
 .carousel {
     position: relative;
     width: 100%;
@@ -55,7 +64,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Estilo das imagens */
+/* Estilo das imagens do carrossel com sombra */
 .imagem-casal {
     width: 100%;
     height: 100%;
@@ -63,7 +72,8 @@ html, body {
     border-radius: 10px;
     position: absolute;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .imagem-casal.active {
@@ -81,6 +91,7 @@ html, body {
 
 /* Mensagem abaixo do container */
 .mensagem {
+    text-align: center;
     font-size: 16px;
     margin-top: 10px;
     padding: 10px;
@@ -92,24 +103,18 @@ html, body {
     animation: beat 1s infinite alternate;
 }
 
-/* Animação do coração */
-@keyframes beat {
-    from { transform: scale(1); }
-    to { transform: scale(1.2); }
-}
-
 /* Efeito de rosas caindo */
 .rose {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('rosa.png');
+    background-image: url('rosa.png'); /* Certifique-se que a imagem existe */
     background-size: cover;
     opacity: 0.8;
     animation: fall linear infinite;
 }
 
-/* Melhor animação da queda */
+/* Animação da queda */
 @keyframes fall {
     from {
         transform: translateY(0);
@@ -118,5 +123,24 @@ html, body {
     to {
         transform: translateY(100vh);
         opacity: 0;
+    }
+}
+
+/* Animação do coração */
+@keyframes beat {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .nome-casal {
+        font-size: 20px;
+    }
+    .tempo {
+        font-size: 16px;
+    }
+    .mensagem {
+        font-size: 14px;
     }
 }
