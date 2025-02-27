@@ -6,14 +6,13 @@ function updateTimer() {
     const diff = now - firstDate;
 
     const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     document.getElementById("timer").innerHTML = 
-        `${years} anos, ${months} meses, ${days} dias <br> 
+        `${years} anos, ${days} dias <br> 
         ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
 }
 
@@ -38,10 +37,21 @@ setInterval(trocarImagem, 3000);
 function criarRosa() {
     const rosa = document.createElement("div");
     rosa.classList.add("rose");
-    rosa.style.left = Math.random() * 100 + "vw";
-    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s";
-    document.body.appendChild(rosa);
-    setTimeout(() => rosa.remove(), 7000);
+
+    rosa.style.left = Math.random() * 100 + "vw"; // Posição aleatória na tela
+    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s"; // Tempo de queda aleatório
+
+    // Ajustando para começar a cair abaixo do carrossel
+    const containerAltura = document.querySelector(".container").offsetHeight;
+    rosa.style.top = `${containerAltura + 20}px`; // Começa um pouco abaixo do container
+
+    document.body.appendChild(rosa); // Adiciona a rosa ao body
+
+    // Remove a rosa após cair
+    setTimeout(() => {
+        rosa.remove();
+    }, 7000);
 }
 
+// Criar rosas continuamente a cada 500ms
 setInterval(criarRosa, 500);
