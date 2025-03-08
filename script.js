@@ -1,9 +1,14 @@
-// Defina a data do primeiro encontro
-const firstDate = new Date("2022-02-26T20:00:00");
+// Defina a data do primeiro encontro (26/02/2022)
+const firstDate = new Date("2022-02-26T00:00:00Z");
 
 function updateTimer() {
     const now = new Date();
     const diff = now - firstDate;
+
+    if (diff < 0) {
+        document.getElementById("timer").innerHTML = "Ainda não houve o encontro!";
+        return;
+    }
 
     const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
     const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -38,15 +43,15 @@ function criarRosa() {
     const rosa = document.createElement("div");
     rosa.classList.add("rose");
 
-    rosa.style.left = Math.random() * 100 + "vw";
-    rosa.style.animationDuration = (Math.random() * 5 + 2) + "s";
+    rosa.style.left = `${Math.random() * 100}%`;
+    rosa.style.animationDuration = `${Math.random() * 5 + 5}s`;
 
     document.body.appendChild(rosa);
 
     setTimeout(() => {
         rosa.remove();
-    }, 7000);
+    }, 10000);
 }
 
-// Criar rosas continuamente a cada 500ms
-setInterval(criarRosa, 500);
+// Cria rosas a cada 200ms
+setInterval(criarRosa, 200);
