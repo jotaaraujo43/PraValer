@@ -1,138 +1,134 @@
-/* Remove rolagem lateral e centraliza tudo */
-html, body {
-    overflow-x: hidden;
+/* Caixa de Música */
+.player-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    position: relative; /* Agora é relative, para se ajustar ao conteúdo */
+    margin-top: 30px; /* Ajuste o valor se precisar de mais ou menos espaçamento */
+    z-index: 10;
+}
+
+
+
+
+/* Nome da Música */
+.musica-info {
+    flex-grow: 1;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Botão Play */
+.botao-play {
+    background-color: #FF6F61;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Garantir que o botão esteja visível */
+}
+
+.botao-play:hover {
+    background-color: #FF5733;
+}
+
+/* Ícone de Play/Pause */
+.fa-play, .fa-pause {
+    color: white;
+    font-size: 18px;
+}
+
+/* Efeitos de hover para o player */
+.botao-play:focus {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+}
+
+/* Ajuste no estilo geral da página */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     background-color: #121212;
     color: white;
-    font-family: 'Poppins', sans-serif;
     text-align: center;
-}
-
-/* Nome do casal com efeito suave */
-.nome-casal {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Efeito de fade-in */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Container principal */
-.container {
-    max-width: 350px;
-    width: 90%;
-    padding: 20px;
-    border-radius: 15px;
-    background: #1e1e1e;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
-    margin-top: 20px;
-}
-
-/* Estilo do timer */
-.tempo {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 10px;
-    z-index: 10; /* Garante que o timer fique acima das imagens */
-}
-
-/* Ajuste no carrossel */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 250px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
 }
 
-/* Estilo das imagens do carrossel com transição suave */
+.nome-casal {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 320px;
+    width: 90%;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Garante que as imagens fiquem visíveis */
+    width: 100%;
+}
+
 .imagem-casal {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 10px;
-    position: absolute;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease;
+    position: absolute; /* Garante que as imagens fiquem sobrepostas corretamente */
 }
 
 .imagem-casal.active {
     opacity: 1;
+    position: relative; /* Garante que a imagem ativa seja visível */
 }
 
-/* Linha branca separando a mensagem */
+/* Timer */
+.tempo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 .linha-branca {
     width: 80%;
+    margin: 20px auto;
     height: 2px;
     background-color: white;
-    margin: 20px auto;
-    border: none;
 }
 
-/* Mensagem abaixo do container */
 .mensagem {
-    text-align: center;
     font-size: 16px;
     margin-top: 10px;
-    padding: 10px;
-    line-height: 1.5;
-    font-weight: 300;
-    color: #ccc;
-}
-
-/* Animação do coração */
-.heart {
-    display: inline-block;
-    animation: beat 1s infinite alternate;
-}
-
-/* Efeito de rosas caindo */
-.rose {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url('rosa.png'); /* Substitua com a URL da imagem de rosa */
-    background-size: cover;
-    opacity: 0.8;
-    animation: fall linear infinite;
-}
-
-/* Animação da queda */
-@keyframes fall {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(100vh); opacity: 0; }
-}
-
-/* Animação do coração */
-@keyframes beat {
-    from { transform: scale(1); }
-    to { transform: scale(1.2); }
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .nome-casal {
-        font-size: 24px;
-    }
-    .tempo {
-        font-size: 18px;
-    }
-    .mensagem {
-        font-size: 14px;
-    }
 }

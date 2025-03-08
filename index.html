@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Amor 💖</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Link do FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
-    <h1 class="nome-casal">José & Shara 💖</h1>
+    <!-- Música de fundo -->
+    <audio id="musica" loop autoplay>
+        <source src="Aliança - Tribalistas.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+
+    <!-- Caixa do player de música -->
+    <div class="player-container">
+        <div class="musica-info">
+            <span class="nome-musica">Aliança - Tribalistas</span>
+        </div>
+        <button id="botao-play" class="botao-play" onclick="toggleMusic()">
+            <i id="icone-play" class="fa fa-play"></i>
+        </button>
+    </div>
+
+    <h1 class="nome-casal">Jose & Shara 💖</h1>
 
     <div class="container">
         <div class="carousel">
@@ -24,18 +43,22 @@
             <img src="casal10.jpg" class="imagem-casal" alt="Foto 10">
         </div>
 
-        <div id="timer" class="tempo"></div>
+        <div id="timer" class="tempo"></div> <!-- Timer agora está abaixo do carrossel -->
 
         <hr class="linha-branca">
-        <p class="mensagem">Shara, minha vida,
+        <p class="mensagem">
+            Shara, minha vida,
 
             Desde que você entrou na minha vida, tudo mudou. Às vezes fico tentando entender como fui tão sortudo de encontrar alguém como você. Cada momento ao seu lado é único, e não há nada que eu queira mais do que passar o resto dos meus dias te fazendo sorrir.
-            
+
             Esse site é só uma forma de tentar expressar um pouquinho do que sinto por você, mesmo sabendo que palavras nunca vão ser suficientes para descrever tudo o que você significa para mim. Te amo mais do que posso dizer, e cada dia com você é uma nova razão para me apaixonar ainda mais.
-            
-            Com todo meu amor, José</p>
+
+            Com todo meu amor,  
+            José
+        </p>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>

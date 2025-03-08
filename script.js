@@ -1,4 +1,21 @@
-// Defina a data do primeiro encontro (26/02/2022)
+// Função para controlar o play/pause da música
+function toggleMusic() {
+    const musica = document.getElementById('musica');
+    const botaoPlay = document.getElementById('botao-play');
+    const iconePlay = document.getElementById('icone-play');
+
+    if (musica.paused) {
+        musica.play();
+        iconePlay.classList.remove('fa-play');
+        iconePlay.classList.add('fa-pause');
+    } else {
+        musica.pause();
+        iconePlay.classList.remove('fa-pause');
+        iconePlay.classList.add('fa-play');
+    }
+}
+
+// ---------------------- Timer ----------------------
 const firstDate = new Date("2022-02-26T00:00:00Z");
 
 function updateTimer() {
@@ -41,17 +58,14 @@ setInterval(trocarImagem, 3000);
 // ---------------------- Rosas Caindo ----------------------
 function criarRosa() {
     const rosa = document.createElement("div");
-    rosa.classList.add("rose");
-
-    rosa.style.left = `${Math.random() * 100}%`;
-    rosa.style.animationDuration = `${Math.random() * 5 + 5}s`;
-
+    rosa.classList.add("rosa");
+    rosa.style.left = Math.random() * 100 + "vw";
+    rosa.style.animationDuration = Math.random() * 3 + 5 + "s";
     document.body.appendChild(rosa);
 
     setTimeout(() => {
         rosa.remove();
-    }, 10000);
+    }, 8000);
 }
 
-// Cria rosas a cada 200ms
-setInterval(criarRosa, 200);
+setInterval(criarRosa, 500);
