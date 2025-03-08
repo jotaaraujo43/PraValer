@@ -9,8 +9,8 @@
     margin: 20px 0;
     width: 250px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    position: relative; /* Agora é relative, para se ajustar ao conteúdo */
-    margin-top: 30px; /* Ajuste o valor se precisar de mais ou menos espaçamento */
+    position: relative;
+    margin-top: 30px;
     z-index: 10;
 }
 
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Garantir que o botão esteja visível */
+    z-index: 2;
 }
 
 .botao-play:hover {
@@ -65,19 +65,16 @@ body {
     padding: 0;
     background-color: #121212;
     color: white;
-    text-align: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden; /* Evita a barra de rolagem */
+    flex-direction: column;
+    text-align: center;
 }
 
-.nome-casal {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
+/* Evitar que o conteúdo ultrapasse os limites da tela */
 .container {
     max-width: 320px;
     width: 90%;
@@ -85,6 +82,12 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.nome-casal {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 /* Carrossel */
@@ -93,7 +96,7 @@ body {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    position: relative; /* Garante que as imagens fiquem visíveis */
+    position: relative;
     width: 100%;
 }
 
@@ -103,12 +106,12 @@ body {
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease;
-    position: absolute; /* Garante que as imagens fiquem sobrepostas corretamente */
+    position: absolute;
 }
 
 .imagem-casal.active {
     opacity: 1;
-    position: relative; /* Garante que a imagem ativa seja visível */
+    position: relative;
 }
 
 /* Timer */
@@ -133,11 +136,11 @@ body {
 /* Estilo para as rosas caindo */
 .rosa {
     position: absolute;
-    bottom: 100%; /* Começa fora da tela */
-    width: 50px; /* Ajuste o tamanho conforme necessário */
+    bottom: 100%;
+    width: 50px;
     height: auto;
     opacity: 0;
-    animation: cair 8s infinite ease-in; /* A animação de queda */
+    animation: cair 8s infinite ease-in;
 }
 
 /* Animação para a queda das rosas */
@@ -148,6 +151,6 @@ body {
     }
     100% {
         opacity: 0;
-        transform: translateY(100vh) rotate(360deg); /* Gira a rosa enquanto cai */
+        transform: translateY(100vh) rotate(360deg);
     }
 }
