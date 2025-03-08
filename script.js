@@ -1,4 +1,4 @@
-// Função para controlar o play/pause da música
+
 function toggleMusic() {
     const musica = document.getElementById('musica');
     const botaoPlay = document.getElementById('botao-play');
@@ -15,7 +15,6 @@ function toggleMusic() {
     }
 }
 
-// ---------------------- Timer ----------------------
 const firstDate = new Date("2022-02-26T00:00:00Z");
 
 function updateTimer() {
@@ -38,11 +37,11 @@ function updateTimer() {
         ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
 }
 
-// Atualiza o contador a cada segundo
+
 setInterval(updateTimer, 1000);
 updateTimer();
 
-// ---------------------- Carrossel ----------------------
+
 let index = 0;
 const imagens = document.querySelectorAll(".imagem-casal");
 
@@ -52,25 +51,25 @@ function trocarImagem() {
     imagens[index].classList.add("active");
 }
 
-// Muda a imagem a cada 3 segundos
+
 setInterval(trocarImagem, 3000);
 
-// ---------------------- Rosas Caindo ----------------------
+
 function criarRosa() {
     const rosa = document.createElement("img");
-    rosa.src = "rosa.png"; // Caminho da imagem da rosa
+    rosa.src = "rosa.png"; 
     rosa.classList.add("rosa");
-    rosa.style.left = Math.random() * 100 + "vw"; // Posiciona a rosa aleatoriamente na horizontal
-    rosa.style.animationDuration = Math.random() * 3 + 5 + "s"; // A duração da animação é aleatória
+    rosa.style.left = Math.random() * 100 + "vw"; 
+    rosa.style.animationDuration = Math.random() * 3 + 5 + "s"; 
 
-    // Adiciona a imagem da rosa ao corpo da página
+    
     document.body.appendChild(rosa);
 
-    // Remove a rosa após a animação
+    
     setTimeout(() => {
         rosa.remove();
-    }, 8000); // Tempo de duração da animação (ajustável)
+    }, 8000); 
 }
 
-// Cria rosas caindo a cada 500ms
+
 setInterval(criarRosa, 500);
