@@ -14,9 +14,6 @@
     z-index: 10;
 }
 
-
-
-
 /* Nome da Música */
 .musica-info {
     flex-grow: 1;
@@ -131,4 +128,26 @@ body {
 .mensagem {
     font-size: 16px;
     margin-top: 10px;
+}
+
+/* Estilo para as rosas caindo */
+.rosa {
+    position: absolute;
+    bottom: 100%; /* Começa fora da tela */
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    opacity: 0;
+    animation: cair 8s infinite ease-in; /* A animação de queda */
+}
+
+/* Animação para a queda das rosas */
+@keyframes cair {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg); /* Gira a rosa enquanto cai */
+    }
 }

@@ -57,15 +57,20 @@ setInterval(trocarImagem, 3000);
 
 // ---------------------- Rosas Caindo ----------------------
 function criarRosa() {
-    const rosa = document.createElement("div");
+    const rosa = document.createElement("img");
+    rosa.src = "rosa.png"; // Caminho da imagem da rosa
     rosa.classList.add("rosa");
-    rosa.style.left = Math.random() * 100 + "vw";
-    rosa.style.animationDuration = Math.random() * 3 + 5 + "s";
+    rosa.style.left = Math.random() * 100 + "vw"; // Posiciona a rosa aleatoriamente na horizontal
+    rosa.style.animationDuration = Math.random() * 3 + 5 + "s"; // A duração da animação é aleatória
+
+    // Adiciona a imagem da rosa ao corpo da página
     document.body.appendChild(rosa);
 
+    // Remove a rosa após a animação
     setTimeout(() => {
         rosa.remove();
-    }, 8000);
+    }, 8000); // Tempo de duração da animação (ajustável)
 }
 
+// Cria rosas caindo a cada 500ms
 setInterval(criarRosa, 500);
