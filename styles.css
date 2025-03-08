@@ -1,4 +1,4 @@
-/* Remove rolagem lateral */
+/* Remove rolagem lateral e centraliza tudo */
 html, body {
     overflow-x: hidden;
     margin: 0;
@@ -38,19 +38,12 @@ html, body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Centraliza imagens e tempo juntos */
-.conteudo-central {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Estilo do timer */
 .tempo {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+    z-index: 10; /* Garante que o timer fique acima das imagens */
 }
 
 /* Ajuste no carrossel */
@@ -64,7 +57,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Estilo das imagens do carrossel com sombra */
+/* Estilo das imagens do carrossel */
 .imagem-casal {
     width: 100%;
     height: 100%;
@@ -73,7 +66,6 @@ html, body {
     position: absolute;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .imagem-casal.active {
@@ -108,7 +100,7 @@ html, body {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-image: url('rosa.png'); /* Certifique-se que a imagem existe */
+    background-image: url('rosa.png');
     background-size: cover;
     opacity: 0.8;
     animation: fall linear infinite;
@@ -116,14 +108,8 @@ html, body {
 
 /* Animação da queda */
 @keyframes fall {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
 }
 
 /* Animação do coração */
