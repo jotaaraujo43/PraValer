@@ -1,42 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Amor 💖</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <h1 class="nome-casal"> J + S 💖</h1>
-
-    <div class="container">
-        <div class="carousel">
-            <img src="casal1.jpg" class="imagem-casal active" alt="Foto 1">
-            <img src="casal2.jpg" class="imagem-casal" alt="Foto 2">
-            <img src="casal3.jpg" class="imagem-casal" alt="Foto 3">
-            <img src="casal4.jpg" class="imagem-casal" alt="Foto 4">
-            <img src="casal5.jpg" class="imagem-casal" alt="Foto 5">
-            <img src="casal6.jpg" class="imagem-casal" alt="Foto 6">
-            <img src="casal7.jpg" class="imagem-casal" alt="Foto 7">
-            <img src="casal8.jpg" class="imagem-casal" alt="Foto 8">
-            <img src="casal9.jpg" class="imagem-casal" alt="Foto 9">
-            <img src="casal10.jpg" class="imagem-casal" alt="Foto 10">
-        </div>
-
-        <div id="timer" class="tempo"></div> <!-- Timer agora está abaixo do carrossel -->
-
-        <hr class="linha-branca">
-        <p class="mensagem">Shara, minha vida,
-
-            Desde que você entrou na minha vida, tudo mudou. Às vezes fico tentando entender como fui tão sortudo de encontrar alguém como você. Cada momento ao seu lado é único, e não há nada que eu queira mais do que passar o resto dos meus dias te fazendo sorrir.
-            
-            Esse site é só uma forma de tentar expressar um pouquinho do que sinto por você, mesmo sabendo que palavras nunca vão ser suficientes para descrever tudo o que você significa para mim. Te amo mais do que posso dizer, e cada dia com você é uma nova razão para me apaixonar ainda mais.
-            
-            Com todo meu amor,
-            José</p>
+<div class="container">
+    <!-- Carrossel de Imagens -->
+    <div class="carousel">
+        <img src="casal1.jpg" class="imagem-casal active" alt="Foto 1">
+        <img src="casal2.jpg" class="imagem-casal" alt="Foto 2">
+        <img src="casal3.jpg" class="imagem-casal" alt="Foto 3">
+        <img src="casal4.jpg" class="imagem-casal" alt="Foto 4">
+        <img src="casal5.jpg" class="imagem-casal" alt="Foto 5">
+        <img src="casal6.jpg" class="imagem-casal" alt="Foto 6">
+        <img src="casal7.jpg" class="imagem-casal" alt="Foto 7">
+        <img src="casal8.jpg" class="imagem-casal" alt="Foto 8">
+        <img src="casal9.jpg" class="imagem-casal" alt="Foto 9">
+        <img src="casal10.jpg" class="imagem-casal" alt="Foto 10">
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- Timer -->
+    <div class="tempo">
+        <div id="timer"></div>
+    </div>
+
+    <!-- Player de Música -->
+    <div class="music-container">
+        <audio id="audioPlayer" controls>
+            <source src="musica.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <!-- Mensagem Romântica -->
+    <div class="mensagem">
+        <p>Shara, minha vida,</p>
+        <p>Desde que você entrou na minha vida, tudo mudou para sempre. Cada momento ao seu lado é único, e não há nada que eu queira mais do que passar o resto dos meus dias te fazendo sorrir.</p>
+        <p>Esse site é só uma forma de tentar expressar um pouquinho do que sinto por você, mesmo sabendo que palavras nunca vão ser suficientes para descrever tudo o que você significa para mim. Te amo mais do que posso dizer, e cada dia com você é uma nova razão para me apaixonar ainda mais.</p>
+        <p>Com todo meu amor,</p>
+        <p>José</p>
+    </div>
+</div>
