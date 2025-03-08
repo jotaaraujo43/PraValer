@@ -68,10 +68,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden; /* Evita a barra de rolagem */
     flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden; /* Remove barra de rolagem */
     text-align: center;
+    height: 100%; /* Garante que o conteúdo ocupe toda a altura da tela */
 }
 
 /* Evitar que o conteúdo ultrapasse os limites da tela */
@@ -85,6 +86,7 @@ body {
     z-index: 5;
 }
 
+/* Nome do Casal */
 .nome-casal {
     font-size: 24px;
     margin-bottom: 20px;
